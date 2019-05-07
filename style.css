@@ -22,32 +22,30 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  animation-name: bg-image;
-  animation-duration: 1s;
+  -webkit-animation: bg-image 0.8s cubic-bezier(0.0, 0.0, 1.0, 1.00) both;
+  animation: bg-image 0.8s cubic-bezier(0.0, 0.0, 1.0, 1.00) both;
   z-index: 1;
 }
 
 @-webkit-keyframes bg-image {
-  from {
-    width: 120%;
+  0% {
+    width: 110%;
     height: 120%;
     margin-top: -5%;
-    margin-left: -5%;
   }
-  to {
+  100% {
     width: 100%;
     height: 100%;
   }
 }
 
 @keyframes bg-image {
-  from {
-    width: 120%;
+  0% {
+    width: 110%;
     height: 120%;
     margin-top: -5%;
-    margin-left: -5%;
   }
-  to {
+  100% {
     width: 100%;
     height: 100%;
   }
@@ -60,6 +58,7 @@ body {
   width: 100%;
   height: 0%;
   background: #dad9d7;
+  -webkit-animation: bg-color-animation 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
   animation: bg-color-animation 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
   z-index: 3;
 }
@@ -90,6 +89,7 @@ body {
   width: 100%;
   height: 0%;
   background: #353d4a;
+  -webkit-animation: bg-dark-blue 0.4s cubic-bezier(0.0, 0.0, 1.0, 0.0) both;
   animation: bg-dark-blue 0.4s cubic-bezier(0.0, 0.0, 1.0, 0.0) both;
 }
 
@@ -203,8 +203,8 @@ body {
   height: 100%;
   background-color: black;
   opacity: 0.7;
-  animation: scale-down-hor-right 1.0s cubic-bezier(0.0, 0.0, 1.0, 0.0) both;
-  animation-name: content-section-animation;
+  -webkit-animation: content-section-animation 1.0s cubic-bezier(0.0, 0.0, 1.0, 0.0) both;
+  animation: content-section-animation 1.0s cubic-bezier(0.0, 0.0, 1.0, 0.0) both;
 }
 
 @-webkit-keyframes content-section-animation {
@@ -248,14 +248,32 @@ body {
   animation: scale-top 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@keyframes scale-top {
+@-webkit-keyframes scale-top {
   0% {
+    -webkit-transform: scaleY(0);
     transform: scaleY(0);
   }
   70% {
+    -webkit-transform: scaleY(0);
     transform: scaleY(0);
   }
   100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-top {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  70% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
     transform: scaleY(1);
   }
 }
@@ -321,7 +339,6 @@ body {
 .bottom-section-content .right-content .description {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30pt;
-  /* line-height: 30px; */
   color: white;
   margin-top: 25px;
   padding-left: 5px;
@@ -343,7 +360,7 @@ body {
   border: solid 3px #f37635;
   margin: 10px 0px;
   color: white;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -489,7 +506,6 @@ body {
 @media (max-width: 1024px) {
   .preloader .content-section {
     width: 100%;
-    /* height: 40%; */
     height: 370px;
     display: flex;
     align-self: flex-end;
@@ -625,26 +641,6 @@ body {
   width: 100%;
   height: 100%;
   padding-top: 104px;
-  /* background-color: white;
-  z-index: 2; */
-}
-
-@-webkit-keyframes slide-down-to-right {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes slide-down-to-right {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
 }
 
 #myCarousel {
@@ -711,8 +707,8 @@ body {
   top: 30%;
   width: 100px;
   margin-left: -16%;
-  animation-duration: 1.1s;
-  animation-name: product-kind-button-group;
+  -webkit-animation: product-kind-button-group 1.1s;
+  animation: product-kind-button-group 1.1s;
 }
 
 @-webkit-keyframes product-kind-button-group {
@@ -720,7 +716,7 @@ body {
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
   }
-  70% {
+  80% {
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
   }
@@ -781,7 +777,26 @@ body {
   background-color: white;
   position: absolute;
   z-index: 5;
+  -webkit-animation: slide-down-to-right 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
   animation: slide-down-to-right 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
+}
+
+@-webkit-keyframes slide-down-to-right {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slide-down-to-right {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .product-description-section {
@@ -833,6 +848,7 @@ body {
   text-transform: uppercase;
   color: #3a3a3a;
   word-wrap: break-word;
+  -webkit-animation: brand-section-text 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: brand-section-text 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -904,8 +920,6 @@ body {
   height: 400px;
   position: absolute;
   top: 235px;
-  /* margin-top: -70px; */
-  /* background-color: white; */
   -webkit-animation: description-section 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: description-section 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   z-index: 7;
@@ -913,8 +927,12 @@ body {
 
 @-webkit-keyframes description-section {
   0% {
+    background-color: transparent;
   }
-  80% {
+  75% {
+    background-color: transparent;
+  }
+  76% {
     background-color: white;
   }
   100% {
@@ -973,6 +991,7 @@ body {
   color: #b2b2b2;
   margin-top: 25px;
   padding-left: 5px;
+  -webkit-animation: description-section-text 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: description-section-text 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
