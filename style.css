@@ -14,7 +14,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   justify-content: flex-end;
 }
 
@@ -25,6 +25,7 @@ body {
   -webkit-animation: bg-image 0.8s cubic-bezier(0.0, 0.0, 1.0, 1.00) both;
   animation: bg-image 0.8s cubic-bezier(0.0, 0.0, 1.0, 1.00) both;
   z-index: 1;
+  left: 0;
 }
 
 @-webkit-keyframes bg-image {
@@ -57,6 +58,8 @@ body {
   position: absolute;
   width: 100%;
   height: 0%;
+  top: 0;
+  right: 0;
   background: #dad9d7;
   -webkit-animation: bg-color-animation 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
   animation: bg-color-animation 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
@@ -122,6 +125,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  left: 0;
   -webkit-animation: slide-bottom 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-bottom 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   z-index: 9;
@@ -231,8 +235,9 @@ body {
   padding-left: 7%;
   height: 100%;
   padding-top: 25vh;
-  top: 0px;
+  top: 0;
   background-color: transparent;
+  z-index: 2;
 }
 
 .right-section-content .title {
@@ -303,8 +308,10 @@ body {
   display: none;
   flex-direction: row;
   position: absolute;
+  left: 0;
   width: 100%;
   background-color: transparent;
+  z-index: 2;
 }
 
 .bottom-section-content .right-content {
@@ -601,38 +608,6 @@ body {
   top: 0;
 }
 
-.header-section-fixed {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  z-index: 8;
-}
-
-.btn-menu-black {
-  width: 42px;
-  height: 50px;
-  background-image: url('./images/menu-black.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.btn-search-black {
-  width: 42px;
-  height: 42px;
-  background-image: url('./images/search-black.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border-color: transparent;
-}
-
 .product-page .content-section {
   display: flex;
   flex-direction: row;
@@ -663,8 +638,11 @@ body {
   0% {
     opacity: 0;
   }
-  50% {
+  40% {
     opacity: 0;
+  }
+  60% {
+    opacity: 1;
     -webkit-transform: translateX(-230px);
     transform: translateX(-230px);
   }
@@ -678,9 +656,16 @@ body {
 @keyframes opacity-transform {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+  }
+  40% {
+    opacity: 0.2;
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
   }
   80% {
-    opacity: 0;
+    opacity: 1;
     -webkit-transform: translateX(-300px);
     transform: translateX(-300px);
   }
@@ -693,6 +678,11 @@ body {
 
 .myCarousel-inner .item {
   height: 100%;
+}
+
+.myCarousel-inner .active {
+  display: flex;
+  align-items: center;
 }
 
 .myCarousel-inner > .item img {
@@ -777,8 +767,8 @@ body {
   background-color: white;
   position: absolute;
   z-index: 5;
-  -webkit-animation: slide-down-to-right 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
-  animation: slide-down-to-right 0.8s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
+  -webkit-animation: slide-down-to-right 0.5s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
+  animation: slide-down-to-right 0.5s cubic-bezier(0.0, 0.0, 1.0, 0.30) both;
 }
 
 @-webkit-keyframes slide-down-to-right {
@@ -1198,7 +1188,7 @@ body {
   .brand-section .text {
     font-size: 40pt;
   }
-  @-webkit-keyframes brand-section-text {
+  @-webkit-keyframes brand-section-text1 {
     0% {
       font-size: 0pt;
     }
@@ -1210,7 +1200,7 @@ body {
     }
   }
   
-  @keyframes brand-section-text {
+  @keyframes brand-section-text1 {
     0% {
       font-size: 0pt;
     }
